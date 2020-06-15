@@ -1,4 +1,5 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, VERSION, Inject, Injector } from '@angular/core';
+import { APP_TITLE } from './providers/app-title';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +7,13 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+  name: string;
+/*
+  constructor(@Inject(APP_TITLE) appTitle: string) {
+    this.name = appTitle;
+  }
+*/
+  constructor(injector: Injector) {
+    this.name = injector.get(APP_TITLE);
+  }
 }
