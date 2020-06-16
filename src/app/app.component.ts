@@ -8,7 +8,11 @@ import { AppConfig } from './providers/app-config';
 })
 export class AppComponent  {
   appTitle: string;
-  constructor({appTitle}: AppConfig) {
+  appNumber: number;
+  appDate: Date;
+  constructor({appTitle, appNumber, appDate}: AppConfig) {
     this.appTitle = appTitle;
+    this.appNumber = appNumber;
+    this.appDate = appDate;
   }
 }
