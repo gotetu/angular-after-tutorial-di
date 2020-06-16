@@ -1,3 +1,3 @@
 export const config = {
-  appTitle: 'Example App',
+  appTitle: 'My Example App',
 };
